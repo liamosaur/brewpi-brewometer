@@ -64,20 +64,18 @@ def median(values):
 
 #Class to hold a TiltHydrometer reading
 class TiltHydrometerValue:
-    temperature = 0
-    gravity = 0
+    bubbleRate = 0
     timestamp = 0
     
-    def __init__(self, temperature, gravity):
-        self.temperature = round(temperature, 2)
-        self.gravity = round(gravity, 3)
+    def __init__(self, bubbleRate):
+        self.bubbleRate = round(temperature, 2)
         self.timestamp = datetime.datetime.now()
         
     def __str__(self):
-        return "T: " + str(self.temperature) + " G: " + str(self.gravity)
+        return "BR: " + str(self.bubbleRate)
 
 #TiltHydrometer class, looks after calibration, storing of values and smoothing of read values.        
-class TiltHydrometer:
+class BubbleCount:
     colour = ''
     debug = False
     values = None
